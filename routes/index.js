@@ -87,6 +87,11 @@ exports.predict = function ( req, res ) {
 
       var maxDate = date_h;
 
+      /* Searched most recent events around the interval (in case it
+       * is required later for analysis)
+       * Can also use latest update for the same
+       */
+
       if (ack_h.high >= date_h || service_h.high >= date_h)
       {
           res.json({message:'Installed'});
