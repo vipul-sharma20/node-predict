@@ -18,25 +18,6 @@ exports.index = function(req, res){
   res.render('index', { title: 'Express' });
 };
 
-/*
-new AppInfo({
-    "gcm_id" : "52dfe0c469631792dba51770",
-    "push_dates" : [ 
-        new Date("2016-03-01T14:56:59.301Z"), 
-        new Date("2016-03-05T14:56:59.301Z"), 
-        new Date("2016-03-15T14:56:59.301Z"), 
-        new Date("2016-03-25T14:56:59.301Z")
-    ],
-    "push_acks" : [ 
-        new Date("2016-03-06T14:56:59.301Z"), 
-        new Date("2016-03-17T14:56:59.301Z")
-    ],
-    "service_dates" : [ 
-        new Date("2016-03-08T14:56:59.301Z")
-    ]
-}).save();
-*/
-
 exports.search = function ( key, check_dates ) {
 
   var len = check_dates.length;
