@@ -3,11 +3,7 @@
  * Module dependencies.
  */
 
-//var MongoClient = require('mongodb').MongoClient;
-//MongoClient.connect('mongodb://localhost:27017/express-predict');
-//var monk = require('monk');
-//var db = monk('localhost:27017/express-predict');
-require( './db' );
+//require( './db' );
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');

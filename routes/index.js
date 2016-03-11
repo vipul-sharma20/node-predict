@@ -3,8 +3,16 @@
  * GET home page.
  */
 
-var mongoose = require('mongoose');
-var AppInfo = mongoose.model('AppInfo');
+//var mongoose = require('mongoose');
+//var AppInfo = mongoose.model('AppInfo');
+
+var mongodb = require('mongodb');
+var MongoClient = mongodb.MongoClient;
+var db;
+
+MongoClient.connect('mongodb://localhost:27017/express-predict', function(err, database) {  
+db=database;  
+});
 
 exports.index = function(req, res){
   res.render('index', { title: 'Express' });
@@ -71,7 +79,7 @@ exports.predict = function ( req, res ) {
   var date_l = new Date(req.param('start_date'));
   var date_h = new Date(req.param('end_date'));
 
-  AppInfo.findOne({ gcm_id: gcm_id }, function(err, docs) {
+  db.collection('AppInfo').findOne({ gcm_id: gcm_id }, function(err, docs) {
       var push_dates = docs.push_dates;
       var push_acks = docs.push_acks;
       var service_dates = docs.service_dates;
